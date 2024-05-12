@@ -78,4 +78,5 @@ Come on, fill in the registration below"""
     <string name="edit_icon">edit_icon</string>
     <string name="send_button">send_button</string>
     <string name="sent_message">Sent message</string>
+    <string name="received_message">received message</string>
 </resources>

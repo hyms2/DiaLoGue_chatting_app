@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
@@ -37,7 +38,7 @@ class ChatActivity : AppCompatActivity() {
         val receiverUid = intent.getStringExtra("uid")
         val senderUid = FirebaseAuth.getInstance().currentUser?.uid
         val title = findViewById<TextView>(R.id.title_name)
-        dbRef = FirebaseDatabase.getInstance().getReference()
+        dbRef = FirebaseDatabase.getInstance().reference
 
         senderRoom = receiverUid + senderUid
         receiverRoom = senderUid + receiverUid
@@ -58,10 +59,10 @@ class ChatActivity : AppCompatActivity() {
             .addValueEventListener(object: ValueEventListener{
                 @SuppressLint("NotifyDataSetChanged")
                 override fun onDataChange(snapshot: DataSnapshot) {
-
                     messageList.clear()
                     for (postSnapshot in snapshot.children) {
                         val message = postSnapshot.getValue(Message::class.java)
+//                        message?.let { messageList.add(it) }
                         messageList.add(message!!)
                     }
                     messageAdapter.notifyDataSetChanged()

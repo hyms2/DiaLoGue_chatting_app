@@ -42,7 +42,7 @@ class MessageAdapter(val context: Context, val messageList: ArrayList<Message>):
         return messageList.size
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val newMessage = messageList[position]
 
         if (holder.javaClass == sentViewHolder::class.java) {
