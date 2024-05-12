@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "216631909295",
+    "firebase_url": "https://dialogue-100f7-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "dialogue-100f7",
+    "storage_bucket": "dialogue-100f7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:216631909295:android:2eae35a2216aeedf52ed5a",
+        "android_client_info": {
+          "package_name": "app.android.dialogue"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAolv3ZbsyphWy_XBzCQf02Yn4KnDmI-k0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
