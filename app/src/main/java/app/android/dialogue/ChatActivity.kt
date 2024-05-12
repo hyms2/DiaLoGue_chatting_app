@@ -76,12 +76,14 @@ class ChatActivity : AppCompatActivity() {
             val message = messageField.text.toString()
             val messageObject = Message(message, senderUid)
 
-            dbRef.child("CHATS").child(senderRoom!!).child("messages").push()
-                .setValue(messageObject).addOnSuccessListener {
-                    dbRef.child("CHATS").child(receiverRoom!!).child("messages").push()
-                        .setValue(messageObject)
-                }
-            messageField.setText("")
+            if (message.isNotEmpty()) {
+                dbRef.child("CHATS").child(senderRoom!!).child("messages").push()
+                    .setValue(messageObject).addOnSuccessListener {
+                        dbRef.child("CHATS").child(receiverRoom!!).child("messages").push()
+                            .setValue(messageObject)
+                    }
+                messageField.setText("")
+            }
         }
     }
 }
