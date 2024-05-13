@@ -14,8 +14,6 @@ import com.google.firebase.auth.FirebaseAuth
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var binding : ActivityHomeBinding
-//    private lateinit var auth: FirebaseAuth
-//    val user = auth.currentUser
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,7 +24,6 @@ class HomeActivity : AppCompatActivity() {
         binding.bottomNavigationView.setOnItemSelectedListener {
             when(it.itemId) {
                 R.id.chat -> replaceFragment(chat())
-//                R.id.group -> replaceFragment(group())
                 R.id.setting -> replaceFragment(setting())
 
                 else ->{
