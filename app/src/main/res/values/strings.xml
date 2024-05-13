@@ -79,4 +79,12 @@ Come on, fill in the registration below"""
     <string name="send_button">send_button</string>
     <string name="sent_message">Sent message</string>
     <string name="received_message">received message</string>
+    <string name="update">update</string>
+    <string name="edit_email">Edit Email</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="delete_account">delete account</string>
+    <string name="new_email">New Email</string>
+    <string name="enter_your_new_email">Enter your new email</string>
+    <string name="new_username">New Username</string>
+    <string name="enter_your_new_username">Enter your new username</string>
 </resources>

@@ -39,7 +39,6 @@ class UserAdapter(val context: Context, val userList: ArrayList<User>):
     }
 
     class UserViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-//        val user_photo = itemView.findViewById<CircleImageView>(R.id.users_photo_profile)
         var username_list = itemView.findViewById<TextView>(R.id.user_name_list)
     }
 }

@@ -1,16 +1,11 @@
 package app.android.dialogue
 
-import android.content.ClipData.Item
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.MenuItem
-import androidx.appcompat.view.menu.MenuView.ItemView
 import androidx.fragment.app.Fragment
 import app.android.dialogue.databinding.ActivityHomeBinding
 import app.android.dialogue.fragment.chat
-import app.android.dialogue.fragment.group
 import app.android.dialogue.fragment.setting
-import com.google.firebase.auth.FirebaseAuth
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var binding : ActivityHomeBinding

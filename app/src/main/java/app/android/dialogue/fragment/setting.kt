@@ -7,7 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
+import app.android.dialogue.EditProfileActivity
 import app.android.dialogue.LoginActivity
 import app.android.dialogue.R
 import app.android.dialogue.model.User
@@ -24,10 +26,6 @@ class setting : Fragment() {
     private lateinit var userEmail: TextView
     private lateinit var auth: FirebaseAuth
     private lateinit var database: DatabaseReference
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -67,6 +65,12 @@ class setting : Fragment() {
             val intent = Intent(requireContext(), LoginActivity::class.java)
             startActivity(intent)
             requireActivity().finish()
+        }
+
+        val buttonUpdate = view.findViewById<ImageView>(R.id.edit_button)
+        buttonUpdate.setOnClickListener{
+            val intent = Intent(requireContext(), EditProfileActivity::class.java)
+            startActivity(intent)
         }
     }
 }
