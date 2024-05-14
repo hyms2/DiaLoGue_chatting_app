@@ -10,6 +10,7 @@
 
     <color name="button_black">#2E2E2E</color>
     <color name="button_white">#EEEEEE</color>
+    <color name="button_aler">#B02121</color>
     <color name="chatbox_user">#56C1C6</color>
     <color name="chatbox_friend">#E9E9E9</color>
 

@@ -51,6 +51,7 @@
             android:layout_marginHorizontal="50dp"
             android:layout_weight="10"
             android:text="@string/edit_profile"
+            android:textColor="@color/primary_font"
             android:gravity="center"
             android:textSize="50sp"
             android:fontFamily="@font/poppins_medium"/>
@@ -73,7 +74,6 @@
             android:hint="@string/enter_your_new_username"
             android:textColor="@color/secondary_font"
             android:fontFamily="@font/poppins_regular"
-            android:inputType="textEmailAddress"
             android:layout_marginHorizontal="50dp"
             android:textCursorDrawable="@null"
             android:padding="10dp"
@@ -97,10 +97,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/delete_account"
-            android:textColor="@color/primary_font"
+            android:textColor="@color/white"
             android:textAllCaps="true"
             android:layout_marginHorizontal="50dp"
-            android:backgroundTint="@color/primary"
+            android:backgroundTint="@color/button_aler"
             android:fontFamily="@font/poppins_bold"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

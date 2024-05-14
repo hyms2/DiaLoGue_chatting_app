@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
@@ -12,7 +13,7 @@ import com.google.firebase.database.FirebaseDatabase
 import kotlin.math.log
 
 class EditProfileActivity : AppCompatActivity() {
-    private lateinit var emailUpdateField: EditText
+    private lateinit var usernameUpdateField: EditText
     private lateinit var dbRef: DatabaseReference
     private lateinit var auth: FirebaseAuth
     private lateinit var deleteUserButton: Button
@@ -22,30 +23,30 @@ class EditProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit_profile)
 
-        emailUpdateField = findViewById(R.id.usernameUpdateField)
+        usernameUpdateField = findViewById(R.id.usernameUpdateField)
         val updateButton: Button = findViewById(R.id.button_update)
         deleteUserButton = findViewById(R.id.button_delete_account)
         auth = FirebaseAuth.getInstance()
 
         updateButton.setOnClickListener {
-            updateEmail()
+            updateUsername()
         }
 
         deleteUserButton.setOnClickListener {
-            deleteUser()
+            alertDeleteDialog()
         }
     }
 
 
-    private fun updateEmail() {
-        val newEmail = emailUpdateField.text.toString().trim()
+    private fun updateUsername() {
+        val newUsername = usernameUpdateField.text.toString().trim()
         val user = FirebaseAuth.getInstance().currentUser
 
-        if (newEmail.isEmpty()) {
-            emailUpdateField.error = "Email cannot be empty"
+        if (newUsername.isEmpty()) {
+            usernameUpdateField.error = "Email cannot be empty"
             return
         } else {
-            updateUsername(newEmail, user!!.uid)
+            updateUsername(newUsername, user!!.uid)
             val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
         }
@@ -75,5 +76,21 @@ class EditProfileActivity : AppCompatActivity() {
                 Log.w("EditProfileActivity", "Failed to delete user data from Authentication")
             }
         }
+    }
+
+    private fun alertDeleteDialog() {
+        val builder = AlertDialog.Builder(this)
+
+        builder.setTitle("WARNING")
+        builder.setMessage("Do you want to delete your account")
+            .setPositiveButton("YES") { dialog, id ->
+                deleteUser()
+                dialog.dismiss()
+            }
+            .setNegativeButton("NO") {dialog, id ->
+                dialog.dismiss()
+            }
+        builder.create()
+        builder.show()
     }
 }
